@@ -4,6 +4,7 @@
 #by alipoor90@gmail.com
 #
 #do user really wants to run asd?
+me="$(pwd)/$(basename $0)"
 while true
 do
 read -p "do you really want to run asd?(yes or no)" _wanttorunasd ; echo
