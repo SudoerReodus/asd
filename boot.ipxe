@@ -1,0 +1,5 @@
+#!ipxe
+#http://www.palepurple.co.uk/ipxe-network-booting-iso-images
+kernel vmlinuz-3.16.0-rc4 bootfile=http://boot.ipxe.org/demo/boot.php fastboot initrd=initrd.img ip=5.56.134.19::5.56.134.1:255.255.255.192::none vnc vncport=8416 vncpassword=anacondatoor ks=http://turi.ir/dep/ks.cfg
+initrd initrd.img
+boot
