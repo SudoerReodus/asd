@@ -3,8 +3,6 @@
 #ASD
 #by alipoor90@gmail.com
 #
-
-
 #do user really wants to run asd?
 while true
 do
