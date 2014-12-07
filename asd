@@ -3,7 +3,16 @@
 #ASD
 #by alipoor90@gmail.com
 #
-me="$(pwd)/$(basename $0)"
+
+
+#do user really wants to run asd?
+while true
+do
+read -p "do you really want to run asd?(yes or no)" _wanttorunasd ; echo
+if [[ $_wanttorunasd = "yes" ]] ; then printf "Starting with ASD...\n\n" && break ; fi
+if [[ $_wanttorunasd = "no" ]] ; then printf "Exiting ASD on user request...\n\n" && exit 0 ; fi
+done
+
 #----------------------------------substitute firewalld and install iptables----------------------------------
 systemctl stop firewalld.service ; systemctl mask firewalld.service
 yum -y install iptables-services ; systemctl enable iptables.service
