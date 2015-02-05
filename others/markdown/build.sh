@@ -8,10 +8,10 @@ local html_output_path="$2"
 mkdir "$html_output_path" 2>/dev/null
 
 
-for input_file_name in $(find $markdown_src_path -name $markdown_src_file_extension 2>/dev/null | cut --delimiter='/' --fields=2- )
+for i in $(find $markdown_src_path -name $markdown_src_file_extension 2>/dev/null | cut --delimiter='/' --fields=2- )
 do
-	mkdir "$html_output_path"/$(dirname $input_file_name) 2>/dev/null
-	pandoc -rmarkdown -whtml "$markdown_src_path"/"$input_file_name" --output="$html_output_path"/"$input_file_name".html
+	mkdir "$html_output_path"/$(dirname "$i") 2>/dev/null
+	pandoc -rmarkdown -whtml "$markdown_src_path"/"$i" --output="$html_output_path"/"$i".html
 done
 
 }
